@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		
+		.bird{width:400px;}
+
+	</style>
+</head>
+<body>
+	<audio src="sound.mp3" id="sss"></audio>
+	<img src="bird.png" class="bird" id="bird">
+
+<script>
+  // Show loading animation.
+  var playPromise = sss.play();
+
+  if (playPromise !== undefined) {
+    playPromise.then(_ => {
+    	console.log("ok");
+      // Automatic playback started!
+      // Show playing UI.
+    })
+    .catch(error => {
+    	console.log("error");
+      // Auto-play was prevented
+      // Show paused UI.
+    });
+  }
+</script>
+</body>
+</html>
